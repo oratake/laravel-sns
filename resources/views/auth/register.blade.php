@@ -14,8 +14,13 @@
               <form method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="md-form">
-                  <label for="name">ユーザー名</label>
-                  <input class="form-control" type="text" id="name" name="name" required value="{{ old('name') }}">
+                    <label for="display_name">表示名</label>
+                    <input class="form-control" type="text" id="display_name" name="display_name" required value="{{ old('display_name') }}">
+                    <small>30文字まで(あとで変更できます)</small>
+                </div>
+                <div class="md-form">
+                  <label for="login_name">ログインユーザ名</label>
+                  <input class="form-control" type="text" id="login_name" name="login_name" required value="{{ old('login_name') }}">
                   <small>英数字3〜16文字(登録後の変更はできません)</small>
                 </div>
                 <div class="md-form">
