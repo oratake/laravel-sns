@@ -37,6 +37,12 @@ class ArticleController extends Controller
         return view('articles.edit', ['article' => $article]);
     }
 
+    public function update(ArticleRequest $request, Article $article)
+    {
+        $article->fill($request->all())->save();
+        return redirect()->route('articles.index');
+    }
+
     public function show(Article $article)
     {
         return view('articles.show', ['article' => $article]);
